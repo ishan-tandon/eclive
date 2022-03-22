@@ -1,0 +1,21 @@
+@font-face {
+  font-family: f1bold;
+  src: url("f1_bold.ttf");
+}
+
+@font-face {
+  font-family: f1reg;
+  src: url("f1_regular.ttf");
+}
+
+@font-face {
+  font-family: f1wide;
+  src: url("f1_wide.ttf");
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  font-family: f1bold;
+  font-size: 60px;
+}
