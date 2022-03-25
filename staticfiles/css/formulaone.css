@@ -13,6 +13,11 @@
   src: url("f1_wide.ttf");
 }
 
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
 h1 {
   color: black;
   text-align: center;
