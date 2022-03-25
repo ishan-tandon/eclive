@@ -19,3 +19,34 @@ h1 {
   font-family: f1bold;
   font-size: 60px;
 }
+
+h2 {
+  color: black;
+  text-align: center;
+  font-family: f1reg;
+  font-size: 40px;
+}
+
+p {
+  color: black;
+  text-align: center;
+  font-family: f1reg;
+  font-size: 20px;
+}
+
+.estimate-btn {
+  color: white;
+  background-color: red;
+  text-align: center;
+  position: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 30px;
+  padding-left: 30px;
+  font-family: f1reg;
+  font-size: 20px;
+}
+
+.centre {
+  text-align: center;
+}
