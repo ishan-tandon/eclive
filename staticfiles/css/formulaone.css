@@ -55,3 +55,7 @@ p {
 .centre {
   text-align: center;
 }
+
+.dt {
+  width: 500px;
+}
