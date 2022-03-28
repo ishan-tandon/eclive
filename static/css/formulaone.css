@@ -58,4 +58,14 @@ p {
 
 .dt {
   width: 500px;
+  background-color: #1d1d27;
+  padding-right: 200px;
+  padding-left: 200px;
+}
+
+ul {
+   list-style: none;
+   margin-left: 0;
+   padding-left: 1em;
+   text-indent: -1em;
 }
