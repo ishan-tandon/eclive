@@ -53,6 +53,11 @@ p {
 }
 
 .centre {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tcentre {
   text-align: center;
 }
 
@@ -68,4 +73,75 @@ ul {
    margin-left: 0;
    padding-left: 1em;
    text-indent: -1em;
+}
+
+table {
+  border-collapse: collapse;
+  border-radius: 5px;
+  border-style: hidden; /* hide standard table (collapsed) border */
+  box-shadow: 0 0 0 8px white;
+}
+
+td {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.leaderboard_top {
+  background-color: #f1f1f1;
+  border-top: 16px solid white;
+  border-left: 4px solid white;
+  border-right: 4px solid white;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.leaderboard_bottom {
+  background-color: #f1f1f1;
+  border-bottom: 16px solid white;
+  border-left: 4px solid white;
+  border-right: 4px solid white;
+  margin-bottom: 10px;
+}
+
+.table_pos {
+  font-family: f1bold;
+  text-align: center;
+  font-size: 25px;
+}
+
+.table_teamcolor {
+  padding-right: 3px;
+  padding-left: 3px;
+  border-top: 6px solid #f1f1f1;
+  border-bottom: 6px solid #f1f1f1;
+}
+
+.pointspan {
+  background-color: #DDDDDD;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom:7px;
+  border-radius: 14px;
+  font-family: f1reg;
+  font-size: 14px
+}
+
+.firstnamespan {
+  font-family: f1reg;
+  font-size: 25px;
+}
+
+.lastnamespan {
+  font-family: f1bold;
+  font-size: 25px;
+}
+
+.teamspan {
+  font-family:f1reg;
+  font-size: 14px;
+  color: #444444;
 }
