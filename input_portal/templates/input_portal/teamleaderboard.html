@@ -6,26 +6,26 @@
       2022 Estimation Championship
     </h1>
     <h2>
-      <span class="selected_standings">estimator standings</span>
-      <span class="selectorseparator">|</span>
       <span class="unselected_standings">
-        <a href = "../teamstandings" style="color:#888888">
-                team standings
+        <a href = "../estimatorstandings" style="color:#888888">
+          estimator standings
         </a>
       </span>
+      <span class="selectorseparator">|</span>
+      <span class="selected_standings">team standings</span>
     </h2>
 
-    {% if cl_table %}
+    {% if tl_table %}
       <table class="current_leaderboard centre">
-      {% for row in cl_table %}
+      {% for row in tl_table %}
         <tr class="leaderboard_top">
           <td rowspan=2 class="table_pos"> {{ forloop.counter }} </td>
           <td style="background-color: {{row.team_color}}" rowspan=2 class="table_teamcolor"></td>
-          <td> <span class="firstnamespan"> {{ row.first_name }} </span> <span class="lastnamespan"> {{ row.last_name|upper }} </td>
+          <td> <span class="lastnamespan"> {{ row.team_name }} </td>
           <td rowspan=2> <span class="pointspan"> {{ row.points|floatformat:0 }} PTS </span> </td>
         </tr>
         <tr class="leaderboard_bottom">
-          <td> <span class='teamspan'> {{ row.team_name }} </span> </td>
+          <td> <span class='teamspan' style="padding-right:289px"> {{ row.driver_name }}</span></td>
         <tr>
       {% endfor %}
       </table>

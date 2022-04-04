@@ -12,7 +12,17 @@ class current_leaderboard(models.Model):
     rank_override = models.IntegerField()
 
     def __str__(self):
-        return str(self.driver_no) + "current leaderboard model"
+        return self.first_name + " " + self.last_name
+
+class team_leaderboard(models.Model):
+    team_name = models.CharField(max_length = 32, unique = True)
+    driver_name = models.CharField(max_length = 128)
+    team_color = models.CharField(max_length = 7)
+    points = models.FloatField()
+    rank_override = models.IntegerField()
+
+    def __str__(self):
+        return str(self.team_name)
 
 
 class alltime_leaderboard(models.Model):
@@ -28,6 +38,7 @@ class alltime_leaderboard(models.Model):
     poles = models.IntegerField()
     most_zeros = models.IntegerField()
     seasons = models.IntegerField()
+    championships = models.IntegerField()
 
     def __str__(self):
-        return str(self.driver_no) + "alltime leaderboard model"
+        return self.first_name + " " + self.last_name

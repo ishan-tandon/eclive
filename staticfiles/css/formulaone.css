@@ -145,3 +145,23 @@ td {
   font-size: 14px;
   color: #444444;
 }
+
+.selected_standings {
+  color: black;
+  text-align: center;
+  font-family: f1reg;
+  font-size: 40px;
+  border-bottom: 4px solid black
+}
+
+.unselected_standings {
+  color: #888888;
+  text-align: center;
+  font-family: f1reg;
+  font-size: 25px;
+}
+
+.selectorseparator{
+  font-family: f1bold;
+  font-size: 40px;
+}

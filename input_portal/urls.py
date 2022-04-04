@@ -8,4 +8,5 @@ urlpatterns = [
     path('about/', views.AboutView.as_view(), name='about'),
     path('draggable/', views.DraggableView.as_view(), name='drag'),
     path('estimatorstandings/', views.LeaderView, name='estimatorstandings'),
+    path('teamstandings/', views.TeamLeaderView, name='teamstandings'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_DIR)
