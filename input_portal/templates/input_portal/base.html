@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static '\css\formulaone.css' %}">
+    <meta charset="utf-8">
+    <title>Estimation Championship</title>
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+    {% block head_block %}
+    {% endblock %}
+  </head>
+  <body>
+
+    <div style="background-color:red; font-family: f1reg; text-align: center; font-size: 25px; padding: 1%">
+      <a href = "../about" style="color: white">
+        Home
+      </a>
+      <span style = "color:red">.....</span>
+      <a href = "../draggable" style="color: white">
+        Input Demo
+      </a>
+      <span style = "color:red">.....</span>
+      <a href = "../leaderboard" style="color: white">
+        Leaderboard
+      </a>
+    </div>
+    <br>
+    {% block body_block %}
+    {% endblock %}
+  </body>
+</html>
