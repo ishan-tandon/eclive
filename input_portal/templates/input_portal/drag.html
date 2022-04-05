@@ -5,88 +5,97 @@
 {% load static %}
 
 {% block head_block %}
-  <script src="{% static '\js\jquery.ui.touch-punch.min.js' %}"></script>
   <script src="{% static '\js\jquery-3.5.1.min.js' %}"></script>
   <script src="{% static '\js\jquery-ui.js' %}"></script>
   <script src="{% static '\js\jquery.mjs.nestedSortable.js' %}"></script>
   <script src="{% static '\js\touchpunch.js' %}"></script>
+  <script src="{% static '\js\jquery.ui.touch-punch.js' %}"></script>
   <script>
   $( function() {
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
   } );
 
+  function serialprinter() {
+    var serial = $( "#sortable" );
+    var intermediate = $(serial).children();
+    var o = [];
+    for(let i = 0; i < intermediate.length; i++) {
+      o.push(($(intermediate[i]).children()[0]).id);
+    }
+    console.log($(o));
+  }
   </script>
+
 {% endblock %}
 
 {% block body_block %}
 
     <h2>Doesn't currently accept responses. You can check out the drag and drop format on computers</h2>
 
-    <div class="tcentre">
-      <ul id="sortable">
+    <div class="centre">
+      <ol id="sortable" class="sortcss">
         <li>
-          <img src="{% static '\images\LH.jpg' %}" alt="My image" class="dt" id="LH">
+          <img src="{% static '\images\dt_LH.jpg' %}" alt="My image" class="dt" id="LH">
         </li>
         <li>
-          <img src="{% static '\images\GR.jpg' %}" alt="My image" class="dt" id="GR">
+          <img src="{% static '\images\dt_GR.jpg' %}" alt="My image" class="dt" id="GR">
         </li>
         <li>
-          <img src="{% static '\images\MV.jpg' %}" alt="My image" class="dt" id="MV">
+          <img src="{% static '\images\dt_MV.jpg' %}" alt="My image" class="dt" id="MV">
         </li>
         <li>
-          <img src="{% static '\images\SP.jpg' %}" alt="My image" class="dt" id="SP">
+          <img src="{% static '\images\dt_SP.jpg' %}" alt="My image" class="dt" id="SP">
         </li>
         <li>
-          <img src="{% static '\images\CL.jpg' %}" alt="My image" class="dt" id="CL">
+          <img src="{% static '\images\dt_CL.jpg' %}" alt="My image" class="dt" id="CL">
         </li>
         <li>
-          <img src="{% static '\images\CS.jpg' %}" alt="My image" class="dt" id="CS">
+          <img src="{% static '\images\dt_CS.jpg' %}" alt="My image" class="dt" id="CS">
         </li>
         <li>
-          <img src="{% static '\images\DR.jpg' %}" alt="My image" class="dt" id="DR">
+          <img src="{% static '\images\dt_DR.jpg' %}" alt="My image" class="dt" id="DR">
         </li>
         <li>
-          <img src="{% static '\images\LN.jpg' %}" alt="My image" class="dt" id="LN">
+          <img src="{% static '\images\dt_LN.jpg' %}" alt="My image" class="dt" id="LN">
         </li>
         <li>
-          <img src="{% static '\images\FA.jpg' %}" alt="My image" class="dt" id="FA">
+          <img src="{% static '\images\dt_FA.jpg' %}" alt="My image" class="dt" id="FA">
         </li>
         <li>
-          <img src="{% static '\images\EO.jpg' %}" alt="My image" class="dt" id="EO">
+          <img src="{% static '\images\dt_EO.jpg' %}" alt="My image" class="dt" id="EO">
         </li>
         <li>
-          <img src="{% static '\images\PG.jpg' %}" alt="My image" class="dt" id="PG">
+          <img src="{% static '\images\dt_PG.jpg' %}" alt="My image" class="dt" id="PG">
         </li>
         <li>
-          <img src="{% static '\images\YT.jpg' %}" alt="My image" class="dt" id="YT">
+          <img src="{% static '\images\dt_YT.jpg' %}" alt="My image" class="dt" id="YT">
         </li>
         <li>
-          <img src="{% static '\images\SV.jpg' %}" alt="My image" class="dt" id="SV">
+          <img src="{% static '\images\dt_SV.jpg' %}" alt="My image" class="dt" id="SV">
         </li>
         <li>
-          <img src="{% static '\images\LS.jpg' %}" alt="My image" class="dt" id="LS">
+          <img src="{% static '\images\dt_LS.jpg' %}" alt="My image" class="dt" id="LS">
         </li>
         <li>
-          <img src="{% static '\images\AA.jpg' %}" alt="My image" class="dt" id="AA">
+          <img src="{% static '\images\dt_AA.jpg' %}" alt="My image" class="dt" id="AA">
         </li>
         <li>
-          <img src="{% static '\images\NL.jpg' %}" alt="My image" class="dt" id="NL">
+          <img src="{% static '\images\dt_NL.jpg' %}" alt="My image" class="dt" id="NL">
         </li>
         <li>
-          <img src="{% static '\images\VB.jpg' %}" alt="My image" class="dt" id="VB">
+          <img src="{% static '\images\dt_VB.jpg' %}" alt="My image" class="dt" id="VB">
         </li>
         <li>
-          <img src="{% static '\images\ZG.jpg' %}" alt="My image" class="dt" id="ZG">
+          <img src="{% static '\images\dt_ZG.jpg' %}" alt="My image" class="dt" id="ZG">
         </li>
         <li>
-          <img src="{% static '\images\KM.jpg' %}" alt="My image" class="dt" id="KM">
+          <img src="{% static '\images\dt_KM.jpg' %}" alt="My image" class="dt" id="KM">
         </li>
         <li>
-          <img src="{% static '\images\MS.jpg' %}" alt="My image" class="dt" id="MS">
+          <img src="{% static '\images\dt_MS.jpg' %}" alt="My image" class="dt" id="MS">
         </li>
-
-
     </div>
+  <!--- <button onclick="serialprinter()">Click me</button> --->
 
 {% endblock %}

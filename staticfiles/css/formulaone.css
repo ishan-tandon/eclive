@@ -62,17 +62,14 @@ p {
 }
 
 .dt {
-  width: 500px;
+  width: 400px;
   background-color: #1d1d27;
   padding-right: 200px;
   padding-left: 200px;
 }
 
-ul {
-   list-style: none;
-   margin-left: 0;
-   padding-left: 1em;
-   text-indent: -1em;
+ol {
+   margin-left: 300px;
 }
 
 table {
@@ -161,7 +158,12 @@ td {
   font-size: 25px;
 }
 
-.selectorseparator{
+.selectorseparator {
   font-family: f1bold;
   font-size: 40px;
+}
+
+.sortcss {
+  font-family: f1bold;
+  font-size: 50px
 }
