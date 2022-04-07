@@ -62,16 +62,38 @@ p {
 }
 
 .dt {
-  width: 400px;
+  width: 300px;
   background-color: #1d1d27;
-  padding-right: 200px;
-  padding-left: 200px;
+  padding-right: 125px;
+  padding-left: 100px;
+  text-align: right;
 }
 
 ol {
-   margin-left: 200px;
+  width:600px;
+  list-style-position: inside;
+  list-style-type: decimal;
+  color: #1d1d27;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
+.removedot {
+  counter-reset: item;
+  list-style-type: none;
+}
+
+.removedot li { display: block; }
+.removedot li:before {
+    content: counter(item) "   ";
+    counter-increment: item;
+}
+
+#sortable li{
+  text-align: right;
+}
 table {
   border-collapse: collapse;
   border-radius: 5px;
@@ -165,5 +187,5 @@ td {
 
 .sortcss {
   font-family: f1bold;
-  font-size: 80px
+  font-size: 40px
 }
