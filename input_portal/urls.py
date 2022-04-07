@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.AboutView.as_view(), name='about'),
     path('about/', views.AboutView.as_view(), name='about'),
     path('draggable/', views.DraggableView.as_view(), name='drag'),
+    path('embed/', views.EmbedView.as_view(), name='embed'),
     path('estimatorstandings/', views.LeaderView, name='estimatorstandings'),
     path('teamstandings/', views.TeamLeaderView, name='teamstandings'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_DIR)

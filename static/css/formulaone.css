@@ -69,7 +69,7 @@ p {
 }
 
 ol {
-   margin-left: 300px;
+   margin-left: 200px;
 }
 
 table {
@@ -165,5 +165,5 @@ td {
 
 .sortcss {
   font-family: f1bold;
-  font-size: 50px
+  font-size: 80px
 }

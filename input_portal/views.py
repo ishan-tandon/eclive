@@ -9,6 +9,9 @@ class AboutView(TemplateView):
 class DraggableView(TemplateView):
     template_name = 'drag.html'
 
+class EmbedView(TemplateView):
+    template_name = 'embed.html'
+
 def LeaderView(request):
     current_leaderboard_list = current_leaderboard.objects.order_by('-points','rank_override')
     leaderboard_dict = {'cl_table' : current_leaderboard_list}
