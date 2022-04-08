@@ -42,3 +42,37 @@ class alltime_leaderboard(models.Model):
 
     def __str__(self):
         return self.first_name + " " + self.last_name
+
+class results_racecodes(models.Model):
+    racecode = models.CharField(max_length = 5, unique = True)
+    year = models.IntegerField()
+    round_no = models.IntegerField()
+    track_png = models.CharField(max_length = 24)
+    country = models.CharField(max_length = 32)
+    race_name = models.CharField(max_length = 128)
+
+    def __str__(self):
+        return self.racecode
+
+class results_info(models.Model):
+    racecode = models.ForeignKey(results_racecodes, on_delete=models.CASCADE)
+    shikulu = models.CharField(max_length = 24)
+    pole = models.CharField(max_length = 65)
+    eotd = models.CharField(max_length = 65)
+    most_zeros = models.CharField(max_length = 65)
+    no_zeros = models.IntegerField()
+    col_one = models.CharField(max_length = 7)
+    col_two = models.CharField(max_length = 7)
+
+    def __str__(self):
+        return str(self.racecode)
+
+class results_data(models.Model):
+    racecode = models.ForeignKey(results_racecodes, on_delete=models.CASCADE)
+    pos = models.IntegerField()
+    estimator = models.CharField(max_length = 4)
+    team_color = models.CharField(max_length = 7)
+    pts = models.FloatField()
+
+    def __str__(self):
+        return str(self.racecode) + "_" + self.estimator

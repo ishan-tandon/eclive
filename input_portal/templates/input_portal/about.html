@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% extends "input_portal/base.html" %}
+{% load static %}
 {% block body_block %}
     <h1>2022 Estimation Championship</h1>
     <br>
@@ -14,4 +15,33 @@
     </div>
 
     <p>submit your response before qualifying, currently scheduled for 11:30 IST on Saturday, April 9</p>
+    {% if races %}
+      <h2> Past Race Results </h2>
+      <center>
+      {% for r in races %}
+        <a href = "../results/{{ r.racecode}}">
+          <table class="resultTable">
+            <tr>
+              <td rowspan="3">
+                <img src="{% static 'images/' %}{{ r.track_png }}" alt="My image" class="trackpng">
+              </td>
+              <td class="resultWidth">
+                <span class="resultRound"> ROUND {{ r.round_no }} </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+               <span class = "resultCountry"> {{ r.country }} </span>
+             </td>
+            </tr>
+            <tr>
+              <td>
+               <span class = "resultName"> {{ r.race_name }} {{ r.year }} </span>
+             </td>
+           </tr>
+         </table>
+        </a>
+      {% endfor %}
+    </center>
+    {% endif %}
 {% endblock %}

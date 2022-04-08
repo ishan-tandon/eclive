@@ -32,6 +32,33 @@ h2 {
   font-size: 40px;
 }
 
+h3 {
+  color: black;
+  text-align: left;
+  font-family: f1bold;
+  font-size: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h4 {
+  color: #444444;
+  text-align: left;
+  font-family: f1reg;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h5 {
+  color: red;
+  text-align: left;
+  font-family: f1reg;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 p {
   color: black;
   text-align: center;
@@ -188,4 +215,108 @@ td {
 .sortcss {
   font-family: f1bold;
   font-size: 40px
+}
+
+.trackpng {
+  width: 150px;
+  padding-right: 20px;
+  border-right: 2px dashed #888888;
+}
+
+.resultRound {
+  color: red;
+  font-size: 16px;
+  font-family: f1reg;
+}
+
+.resultCountry {
+  color: black;
+  font-size: 32px;
+  font-family: f1bold;
+}
+
+.resultName {
+  color: #888888;
+  font-size: 16px;
+  font-family: f1reg;
+}
+
+.resultTable {
+  display: inline-block;
+}
+
+.resultTable, td {
+  background-color: #f1f1f1;
+  padding-top: 10px;
+}
+
+.resultWidth {
+  width: 500px;
+}
+
+.resultImageCol {
+  display: inline-block;
+}
+
+.resultTableCol {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  width: 400px;
+}
+.shikulu {
+  width: 400px;
+}
+
+.resultImageTableTop {
+  font-family: f1reg;
+  font-size: 18px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 400px;
+}
+
+.resultImageTableBottom {
+  font-family: f1bold;
+  font-size: 18px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 400px;
+}
+
+.leaderHead {
+  background-color: #222222;
+  color: #f1f1f1;
+  font-size: 15px;
+  font-family: f1reg;
+}
+
+.leader_teamcolor {
+  padding-right: 0px;
+  padding-left: 0px;
+  border-top: 6px solid red;
+  border-bottom: 6px solid #f1f1f1;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 10px;
+}
+
+.racepointspan {
+  font-family: f1reg;
+  font-size: 15px;
+  width: 50px;
+  text-align: center;
+}
+
+.abbrspan {
+  font-family: f1bold;
+  font-size: 15px;
+  width: 30px;
+}
+
+.resultpos {
+  font-family: f1bold;
+  text-align: center;
+  font-size: 15px;
+  width: 50px;
 }
