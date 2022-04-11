@@ -19,30 +19,30 @@
     <table class="result_leaderboard">
       <thead>
         <td class="leaderHead"> POS </td>
-        <td class="leader_teamcolor leaderHead"></td>
+        <td class="leader_teamcolor2 leaderHead"></td>
         <td class="leaderHead"> ESTIMATOR </td>
         <td class="leaderHead  tcentre"> SCORE </td>
         <td class="leaderHead tcentre"> PTS </td>
       </thead>
       <tr>
         <td class="resultpos"> {{ p1.pos }} </td>
-        <td style="background-color: {{ p1.team_color }}; width:10px;" class="leader_teamcolor"> </td>
+        <td style="background-color: {{ p1.team_color }}" class="leader_teamcolor"> </td>
         <td class="abbrspan"> {{ p1.estimator }} </td>
-        <td> </td>
+        <td class="tcentre"> <span class="scorespan"> {{ p1.score }} </span> </td>
         <td <span class="racepointspan"> {{ p1.pts|floatformat:0 }} </td>
       </tr>
       <tr>
         <td class="resultpos"> {{ p2.pos }} </td>
         <td style="background-color: {{ p2.team_color }}" class="leader_teamcolor"></td>
         <td class="abbrspan"> {{ p2.estimator }} </td>
-        <td> </td>
+        <td class="tcentre"> <span class="scorespan"> {{ p2.score }} </span> </td>
         <td <span class="racepointspan"> {{ p2.pts|floatformat:0 }} </td>
       </tr>
       <tr>
         <td class="resultpos"> {{ p3.pos }} </td>
         <td style="background-color: {{ p3.team_color }};" class="leader_teamcolor"> </td>
         <td class="abbrspan"> {{ p3.estimator }} </td>
-        <td> </td>
+        <td class="tcentre"> <span class="scorespan"> {{ p3.score }} </span> </td>
         <td <span class="racepointspan"> {{ p3.pts|floatformat:0 }} </td>
       </tr>
 
@@ -51,7 +51,7 @@
           <td class="resultpos"> {{ p.pos }} </td>
           <td style="background-color: {{ p.team_color }}" class="leader_teamcolor"> </td>
           <td class="abbrspan"> {{ p.estimator }} </td>
-          <td> </td>
+          <td class="tcentre"> <span class="scorespan"> {{ p.score }} </span> </td>
           <td <span class="racepointspan"> {{ p.pts|floatformat:0 }} </td>
         </tr>
       {% endfor %}

@@ -72,6 +72,7 @@ class results_data(models.Model):
     pos = models.IntegerField()
     estimator = models.CharField(max_length = 4)
     team_color = models.CharField(max_length = 7)
+    score = models.IntegerField(max_length = 3)
     pts = models.FloatField()
 
     def __str__(self):

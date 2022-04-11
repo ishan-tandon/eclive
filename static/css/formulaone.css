@@ -287,18 +287,26 @@ td {
 .leaderHead {
   background-color: #222222;
   color: #f1f1f1;
-  font-size: 15px;
+  font-size: 12px;
   font-family: f1reg;
 }
 
 .leader_teamcolor {
   padding-right: 0px;
   padding-left: 0px;
-  border-top: 6px solid red;
+  border-top: 6px solid #f1f1f1;
   border-bottom: 6px solid #f1f1f1;
   margin-left: 0px;
   margin-right: 0px;
-  width: 10px;
+  width: 4px;
+}
+
+.leader_teamcolor2 {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 4px;
 }
 
 .racepointspan {
@@ -319,4 +327,15 @@ td {
   text-align: center;
   font-size: 15px;
   width: 50px;
+}
+
+.scorespan {
+  background-color: #DDDDDD;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom:7px;
+  border-radius: 14px;
+  font-family: f1reg;
+  font-size: 12px
 }
