@@ -11,4 +11,6 @@ urlpatterns = [
     path('estimatorstandings/', views.LeaderView, name='estimatorstandings'),
     path('teamstandings/', views.TeamLeaderView, name='teamstandings'),
     path('results/<str:racecode>/', views.ResultsView, name='results'),
+    path('alltimestats/', views.AllTimeStatsView, name='alltimestats'),
+    path('alltimestats/<str:orderBy>/', views.AllTimeStatsViewO, name='alltimestats'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_DIR)

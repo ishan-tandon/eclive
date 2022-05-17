@@ -17,6 +17,7 @@ a:link { text-decoration: none; }
 a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
+a { color: inherit; }
 
 h1 {
   color: black;
@@ -338,4 +339,39 @@ td {
   border-radius: 14px;
   font-family: f1reg;
   font-size: 12px
+}
+
+.statHead {
+  background-color: #222222;
+  color: #f1f1f1;
+  font-size: 12px;
+  font-family: f1reg;
+}
+
+.statButtonunselected {
+  background-color: red;
+  color: #f1f1f1;
+  font-size: 12px;
+  font-family: f1reg;
+  border-left: 2px solid #222222;
+  border-right: 2px solid #222222;
+}
+
+.statButtonselected {
+  background-color: #f1f1f1;
+  color: red;
+  font-size: 12px;
+  font-family: f1reg;
+  border-left: 2px solid #222222;
+  border-right: 2px solid #222222;
+}
+
+.statText {
+  background-color: #f1f1f1;
+  color: #111111;
+  font-size: 12px;
+  font-family: f1reg;
+  border-top: 2px solid #222222;
+  border-bottom: 2px solid #222222;
+  text-align: center;
 }

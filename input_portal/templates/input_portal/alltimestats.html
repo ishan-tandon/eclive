@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% extends "input_portal/base.html" %}
+{% block body_block %}
+  <h2>All Time Statistics</h2>
+  <p style="text-align: right; font-size: 10px"> use red buttons to order </p>
+  {% if stat_table %}
+  <table class="current_leaderboard centre">
+  <thead>
+    <td class="statHead"> Pos </td>
+    <td class="statHead"> No </td>
+    <td class="statHead"> Abbr </td>
+    <td class="statHead"> Name </td>
+    <td class="statHead"> Seasons </td>
+    <td class="statHead"> Championships </td>
+    <td class="statButton{{ s.0 }}"> <a href = "{{ h.0 }}"> Races </a> </td>
+    <td class="statButton{{ s.1 }}"> <a href = "{{ h.1 }}"> Wins </a> </td>
+    <td class="statButton{{ s.2 }}"> <a href = "{{ h.2 }}"> Podiums </a> </td>
+    <td class="statButton{{ s.3 }}"> <a href = "{{ h.3 }}"> Pole Positions </a> </td>
+    <td class="statButton{{ s.4 }}"> <a href = "{{ h.4 }}"> Most Zeros </a> </td>
+    <td class="statHead"> Sprints </td>
+    <td class="statButton{{ s.5 }}"> <a href = "{{ h.5 }}"> Sprint King Awards </a> </td>
+    <td class="statHead"> Sprint Medals </td>
+    <td class="statButton{{ s.6 }}"> <a href = "{{ h.6 }}"> Points </a> </td>
+  </thead>
+  {% for row in stat_table %}
+    <tr>
+      <td class="statText"> {{ forloop.counter }} </td>
+      <td class="statText"> {{ row.driver_no }} </td>
+      <td class="statText"> {{ row.abbr }} </td>
+      <td class="statText"> {{ row.first_name }} {{ row.last_name }} </td>
+      <td class="statText"> {{ row.seasons }} </td>
+      <td class="statText"> {{ row.championships }} </td>
+      <td class="statText"> {{ row.races }} </td>
+      <td class="statText"> {{ row.wins }} </td>
+      <td class="statText"> {{ row.podiums }} </td>
+      <td class="statText"> {{ row.poles }} </td>
+      <td class="statText"> {{ row.most_zeros }} </td>
+      <td class="statText"> {{ row.sprints }} </td>
+      <td class="statText"> {{ row.sprint_king }} </td>
+      <td class="statText"> {{ row.sprint_medals }} </td>
+      <td class="statText"> {{ row.points|floatformat:0 }} </td>
+    </tr>
+  {% endfor %}
+  </table>
+  {% else %}
+    <p>No data found </p>
+  {% endif %}
+{% endblock %}

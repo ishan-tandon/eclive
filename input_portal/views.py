@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import (TemplateView)
-from input_portal.models import current_leaderboard, team_leaderboard, results_racecodes, results_info, results_data, sprint_data
+from input_portal.models import current_leaderboard, team_leaderboard, results_racecodes, results_info, results_data, sprint_data, alltime_leaderboard
 # Create your views here.
 
 def AboutView(request):
@@ -23,6 +23,44 @@ def TeamLeaderView(request):
     team_leaderboard_list = team_leaderboard.objects.order_by('-points','rank_override')
     leaderboard_dict = {'tl_table' : team_leaderboard_list}
     return render(request, 'teamleaderboard.html', context = leaderboard_dict)
+
+def AllTimeStatsView(request):
+    href_list=['races', 'wins', 'podiums', 'poles', 'mostzeros', 'sprintkings', 'points']
+    selected_list=['unselected', 'unselected', 'unselected', 'unselected', 'unselected', 'unselected', 'unselected']
+    alltimestats_list = alltime_leaderboard.objects.order_by('-championships', '-wins', '-podiums', '-points')
+    stats_dict = {'stat_table' : alltimestats_list, 'h': href_list, 's': selected_list}
+    return render(request, 'alltimestats.html', context = stats_dict)
+
+def AllTimeStatsViewO(request, orderBy):
+    href_list=['../races', '../wins', '../podiums', '../poles', '../mostzeros', '../sprintkings', '../points']
+    selected_list=['unselected', 'unselected', 'unselected', 'unselected', 'unselected', 'unselected', 'unselected']
+    if orderBy == "races":
+        alltimestats_list = alltime_leaderboard.objects.order_by('-races', '-wins', '-podiums', '-points')
+        i=0
+    elif orderBy == "wins":
+        alltimestats_list = alltime_leaderboard.objects.order_by('-wins', '-podiums', '-points')
+        i=1
+    elif orderBy == "podiums":
+        alltimestats_list = alltime_leaderboard.objects.order_by('-podiums', '-wins', '-points')
+        i=2
+    elif orderBy == "poles":
+        alltimestats_list = alltime_leaderboard.objects.order_by('-poles', '-wins', '-podiums', '-points')
+        i=3
+    elif orderBy == "mostzeros":
+        alltimestats_list = alltime_leaderboard.objects.order_by('-most_zeros', '-wins', '-podiums', '-points')
+        i=4
+    elif orderBy == "sprintkings":
+        alltimestats_list = alltime_leaderboard.objects.order_by('-sprint_king', '-wins', '-podiums', '-points')
+        i=5
+    elif orderBy == "points":
+        alltimestats_list = alltime_leaderboard.objects.order_by('-points')
+        i=6
+    else:
+        return render (request, 'noorder.html')
+    href_list[i] = ".."
+    selected_list[i] = "selected"
+    stats_dict = {'stat_table' : alltimestats_list, 'h': href_list, 's': selected_list}
+    return render(request, 'alltimestats.html', context = stats_dict)
 
 def ResultsView(request, racecode):
     R = results_racecodes.objects.filter(racecode= racecode)
