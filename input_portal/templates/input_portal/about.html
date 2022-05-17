@@ -20,6 +20,7 @@
       <center>
       {% for r in races %}
         <a href = "../results/{{ r.racecode}}">
+          <div style="overflow-x: auto;">
           <table class="resultTable">
             <tr>
               <td rowspan="3">
@@ -40,6 +41,7 @@
              </td>
            </tr>
          </table>
+       </div>
         </a>
       {% endfor %}
     </center>
