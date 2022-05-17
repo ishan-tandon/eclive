@@ -70,11 +70,19 @@ sprintlist=[8,7,6,5,4,3,2,1,0,0,0,0,0,0,0,0,0,0,0,0]
 for i in order:
     t = sprint_data(racecode = trc, pos = i[1], estimator = i[2], team_color = i[3], grid = i[5], score = i[4], pts = (sprintlist[i[1]-1]))
     u = current_leaderboard.objects.get(abbr = i[2])
-#    w = team_leaderboard.objects.get(team_color = i[3])
+    w = team_leaderboard.objects.get(team_color = i[3])
+    a = alltime_leaderboard.objects.get(abbr = i[2])
+    a.sprint += 1
+    if t.pts >= 6:
+        a.sprint_medals += 1
+    if t.pts == 8:
+        a.sprint_king += 1
+    a.points += t.pts
     u.points += t.pts
-#    w.points += t.pts
+    w.points += t.pts
+    a.save
     u.save()
-#    w.save()
+    w.save()
     t.save()
 
 n = int(input("No. of Estimators: "))
@@ -96,9 +104,20 @@ for i in order:
         x = 0
     t = results_data(racecode = trc, pos = i[1], estimator = i[2], team_color = i[3], grid = i[5], score = i[4], pts = (pointslist[i[1]-1] + x))
     u = current_leaderboard.objects.get(abbr = i[2])
-#    w = team_leaderboard.objects.get(team_color = i[3])
+    w = team_leaderboard.objects.get(team_color = i[3])
+    a = alltime_leaderboard.objects.get(abbr = i[2])
+    a.races += 1
+    if t.pts >= 25:
+        a.wins += 1
+    a.most_zeros += x
+    if t.pts >= 15:
+        a.podiums += 1
+    if fullname_extractor(a.abbr) == pole_fn:
+        a.poles += 1
+    a.points += t.pts
     u.points += t.pts
-#    w.points += t.pts
+    w.points += t.pts
+    a.save()
     u.save()
-#    w.save()
+    w.save()
     t.save()

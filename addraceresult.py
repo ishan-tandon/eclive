@@ -4,7 +4,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'estimation_app.settings')
 import django
 django.setup()
 
-from input_portal.models import results_racecodes, results_info, results_data, current_leaderboard, team_leaderboard
+from input_portal.models import results_racecodes, results_info, results_data, current_leaderboard, team_leaderboard, alltime_leaderboard
 
 def fullname_extractor(input_abbr):
     t = current_leaderboard.objects.get(abbr = input_abbr)
@@ -71,9 +71,20 @@ for i in order:
         x = 0
     t = results_data(racecode = trc, pos = i[1], estimator = i[2], team_color = i[3], grid = i[5], score = i[4], pts = (pointslist[i[1]-1] + x))
     u = current_leaderboard.objects.get(abbr = i[2])
-#    w = team_leaderboard.objects.get(team_color = i[3])
+    w = team_leaderboard.objects.get(team_color = i[3])
+    a = alltime_leaderboard.objects.get(abbr = i[2])
+    a.races += 1
+    if t.pts >= 25:
+        a.wins += 1
+    a.most_zeros += x
+    if t.pts >= 15:
+        a.podiums += 1
+    if fullname_extractor(a.abbr) == pole_fn:
+        a.poles += 1
+    a.points += t.pts
     u.points += t.pts
-#    w.points += t.pts
+    w.points += t.pts
+    a.save()
     u.save()
-#    w.save()
+    w.save()
     t.save()
