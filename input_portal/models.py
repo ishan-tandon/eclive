@@ -50,6 +50,7 @@ class results_racecodes(models.Model):
     track_png = models.CharField(max_length = 24)
     country = models.CharField(max_length = 32)
     race_name = models.CharField(max_length = 128)
+    sprint = models.IntegerField()
 
     def __str__(self):
         return self.racecode
@@ -59,6 +60,7 @@ class results_info(models.Model):
     shikulu = models.CharField(max_length = 24)
     pole = models.CharField(max_length = 65)
     eotd = models.CharField(max_length = 65)
+    sprint_king = models.CharField(max_length = 65)
     most_zeros = models.CharField(max_length = 65)
     no_zeros = models.IntegerField()
     col_one = models.CharField(max_length = 7)
@@ -72,6 +74,19 @@ class results_data(models.Model):
     pos = models.IntegerField()
     estimator = models.CharField(max_length = 4)
     team_color = models.CharField(max_length = 7)
+    grid = models.CharField(max_length=2)
+    score = models.IntegerField()
+    pts = models.FloatField()
+
+    def __str__(self):
+        return str(self.racecode) + "_" + self.estimator
+
+class sprint_data(models.Model):
+    racecode = models.ForeignKey(results_racecodes, on_delete=models.CASCADE)
+    pos = models.IntegerField()
+    estimator = models.CharField(max_length = 4)
+    team_color = models.CharField(max_length = 7)
+    grid = models.CharField(max_length=2)
     score = models.IntegerField()
     pts = models.FloatField()
 
