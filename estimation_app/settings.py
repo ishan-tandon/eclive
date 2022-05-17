@@ -25,7 +25,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'input_portal/templates/input_portal')
 SECRET_KEY = 'django-insecure-xlj$71j(fzrp+x6#ypa@&vn0p=q4_t7jxb0$pdrka4jteza&zn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['estimation-championship.herokuapp.com', '127.0.0.1']
 
 
