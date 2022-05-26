@@ -97,6 +97,14 @@ p {
   text-align: right;
 }
 
+.dt_ferrari {
+  width: 300px;
+  background-color: #d33035;
+  padding-right: 125px;
+  padding-left: 100px;
+  text-align: right;
+}
+
 ol {
   width:600px;
   list-style-position: inside;

@@ -97,6 +97,14 @@ p {
   text-align: right;
 }
 
+.dt {
+  width: 300px;
+  background-color: #ed1c1f;
+  padding-right: 125px;
+  padding-left: 100px;
+  text-align: right;
+}
+
 ol {
   width:600px;
   list-style-position: inside;
