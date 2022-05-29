@@ -53,7 +53,7 @@ def AllTimeStatsViewO(request, orderBy):
         alltimestats_list = alltime_leaderboard.objects.order_by('-sprint_king', '-wins', '-podiums', '-points')
         i=5
     elif orderBy == "points":
-        alltimestats_list = alltime_leaderboard.objects.order_by('-points')
+        alltimestats_list = alltime_leaderboard.objects.order_by('-points', '-wins', '-podiums')
         i=6
     else:
         return render (request, 'noorder.html')
