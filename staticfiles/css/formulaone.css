@@ -105,6 +105,14 @@ p {
   text-align: right;
 }
 
+.dt_canada {
+  width: 300px;
+  background-color: #ea0519;
+  padding-right: 125px;
+  padding-left: 100px;
+  text-align: right;
+}
+
 ol {
   width:600px;
   list-style-position: inside;
