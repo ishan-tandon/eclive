@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% extends "input_portal/base.html" %}
+{% load static %}
+{% block body_block %}
+  <center>
+    <div class="resultImageCol">
+      <img src = "{% static '/images/' %}{{ shikulu }}" class="shikulu">
+      <div style="background-color: {{ co }}; color: {{ ct }}" class="resultImageTableTop"> POLE </div>
+      <div style="background-color: {{ ct }}; color: {{ co }}" class="resultImageTableBottom"> {{ pole|upper }} </div>
+      <div style="background-color: {{ co }}; color: {{ ct }}" class="resultImageTableTop"> MOST ZEROS </div>
+      <div style="background-color: {{ ct }}; color: {{ co }}" class="resultImageTableBottom"> {{ mz|upper }} ({{ nz }}) </div>
+      <div style="background-color: {{ co }}; color: {{ ct }}" class="resultImageTableTop"> ESTIMATOR OF THE DAY </div>
+      <div style="background-color: {{ ct }}; color: {{ co }}" class="resultImageTableBottom"> {{ eotd|upper }} </div>
+
+      <p> Race Rules <br> Qualification Results Raw <br> Sprint Race Results Raw <br>Race Results Raw <br> Estimator Championship Raw <br> Teams Championship Raw </p>
+
+    </div>
+    <div class="resultTableCol">
+    <h5> ROUND {{ rn }}</h5>
+    <h3> {{ country }} </h3>
+    <h4> {{ name }} {{ year }}</h4>
+    <table class="result_leaderboard">
+      <thead>
+        <td class="leaderHead"> POS </td>
+        <td class="leader_teamcolor2 leaderHead"></td>
+        <td class="leaderHead"> ESTIMATOR </td>
+        <td class="leaderHead tcentre"> GRID </td>
+        <td class="leaderHead  tcentre"> SCORE </td>
+        <td class="leaderHead tcentre"> PTS </td>
+      </thead>
+      <tr>
+        <td class="resultpos"> {{ p1.pos }} </td>
+        <td style="background-color: {{ p1.team_color }}" class="leader_teamcolor"> </td>
+        <td class="abbrspan"> {{ p1.estimator }} </td>
+        <td class="racepointspan"> {{ p1.grid }} </td>
+        <td class="tcentre"> <span class="scorespan"> {{ p1.score }} </span> </td>
+        <td <span class="racepointspan"> {{ p1.pts|floatformat:0 }} </td>
+      </tr>
+      <tr>
+        <td class="resultpos"> {{ p2.pos }} </td>
+        <td style="background-color: {{ p2.team_color }}" class="leader_teamcolor"></td>
+        <td class="abbrspan"> {{ p2.estimator }} </td>
+        <td class="racepointspan"> {{ p2.grid }} </td>
+        <td class="tcentre"> <span class="scorespan"> {{ p2.score }} </span> </td>
+        <td <span class="racepointspan"> {{ p2.pts|floatformat:0 }} </td>
+      </tr>
+      <tr>
+        <td class="resultpos"> {{ p3.pos }} </td>
+        <td style="background-color: {{ p3.team_color }};" class="leader_teamcolor"> </td>
+        <td class="abbrspan"> {{ p3.estimator }} </td>
+        <td class="racepointspan"> {{ p3.grid }} </td>
+        <td class="tcentre"> <span class="scorespan"> {{ p3.score }} </span> </td>
+        <td <span class="racepointspan"> {{ p3.pts|floatformat:0 }} </td>
+      </tr>
+
+      {% for p in pr %}
+        <tr>
+          <td class="resultpos"> {{ p.pos }} </td>
+          <td style="background-color: {{ p.team_color }}" class="leader_teamcolor"> </td>
+          <td class="abbrspan"> {{ p.estimator }} </td>
+          <td class="racepointspan"> {{ p.grid }} </td>
+          <td class="tcentre"> <span class="scorespan"> {{ p.score }} </span> </td>
+          <td <span class="racepointspan"> {{ p.pts|floatformat:0 }} </td>
+        </tr>
+      {% endfor %}
+    </table>
+
+    <h4>Most Zeros</h4>
+
+    <table class="result_leaderboard">
+      <thead>
+        <td class="leaderHead"> POS </td>
+        <td class="leader_teamcolor2 leaderHead"></td>
+        <td class="leaderHead"> ESTIMATOR </td>
+        <td class="leaderHead  tcentre"> NZ </td>
+        <td class="leaderHead tcentre"> PTS </td>
+      </thead>
+      <tr>
+        <td class="resultpos"> {{ s1.pos }} </td>
+        <td style="background-color: {{ s1.team_color }}" class="leader_teamcolor"> </td>
+        <td class="abbrspan"> {{ s1.estimator }} </td>
+        <td class="tcentre"> <span class="scorespan"> {{ s1.score }} </span> </td>
+        <td <span class="racepointspan"> {{ s1.pts|floatformat:0 }} </td>
+      </tr>
+
+      {% for s in sr %}
+        <tr>
+          <td class="resultpos"> {{ s.pos }} </td>
+          <td style="background-color: {{ s.team_color }}" class="leader_teamcolor"> </td>
+          <td class="abbrspan"> {{ s.estimator }} </td>
+          <td class="tcentre"> <span class="scorespan"> {{ s.score }} </span> </td>
+          <td <span class="racepointspan"> {{ s.pts|floatformat:0 }} </td>
+        </tr>
+      {% endfor %}
+    </table>
+
+    </div>
+  </center>
+{% endblock %}

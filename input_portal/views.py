@@ -74,4 +74,7 @@ def ResultsView(request, racecode):
     else:
         S = sprint_data.objects.filter(racecode__racecode= racecode).order_by('pos')
         results_dict={"year": R[0].year, "rn": R[0].round_no, "country": R[0].country, "name": R[0].race_name, "shikulu": r[0].shikulu, "pole": r[0].pole, "eotd": r[0].eotd, "mz": r[0].most_zeros, "nz": r[0].no_zeros, "co": r[0].col_one, "ct": r[0].col_two, "p1": D[0], "p2": D[1], "p3":D[2], "pr":D[3:], "s1": S[0], "sr": S[1:], "sk": r[0].sprint_king}
-        return render (request, 'sprintresults.html', context = results_dict)
+        if R[0].sprint == 1:
+            return render (request, 'sprintresults.html', context = results_dict)
+        elif R[0].sprint == 2:
+            return render (request, 'lightningresults.html', context = results_dict)
