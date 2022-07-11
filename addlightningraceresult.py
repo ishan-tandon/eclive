@@ -76,7 +76,7 @@ for i in order:
     a.points += t.pts
     u.points += t.pts
     w.points += t.pts
-    a.save
+    a.save()
     u.save()
     w.save()
     t.save()

@@ -4,7 +4,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'estimation_app.settings')
 import django
 django.setup()
 
-from input_portal.models import results_racecodes, results_info, results_data, current_leaderboard, team_leaderboard, sprint_data
+from input_portal.models import results_racecodes, results_info, results_data, current_leaderboard, team_leaderboard, sprint_data, alltime_leaderboard
 
 def fullname_extractor(input_abbr):
     t = current_leaderboard.objects.get(abbr = input_abbr)
@@ -52,7 +52,7 @@ cont = input("Type YES to confirm:\t")
 
 trc = results_racecodes(racecode = rc, year = year, round_no = round_no, track_png = trackpng, country = country, race_name = racename, sprint=1)
 trc.save()
-tri = results_info(racecode = trc, shikulu = shikulu, pole = pole_fn, ,sprint_king=sk_fn, eotd = eotd_fn, most_zeros = mz_fn, no_zeros = nz, col_one = col1, col_two = col2)
+tri = results_info(racecode = trc, shikulu = shikulu, pole = pole_fn, sprint_king=sk_fn, eotd = eotd_fn, most_zeros = mz_fn, no_zeros = nz, col_one = col1, col_two = col2)
 tri.save()
 
 n = int(input("No. of Estimators: "))
@@ -72,7 +72,7 @@ for i in order:
     u = current_leaderboard.objects.get(abbr = i[2])
     w = team_leaderboard.objects.get(team_color = i[3])
     a = alltime_leaderboard.objects.get(abbr = i[2])
-    a.sprint += 1
+    a.sprints += 1
     if t.pts >= 6:
         a.sprint_medals += 1
     if t.pts == 8:
@@ -80,7 +80,7 @@ for i in order:
     a.points += t.pts
     u.points += t.pts
     w.points += t.pts
-    a.save
+    a.save()
     u.save()
     w.save()
     t.save()
