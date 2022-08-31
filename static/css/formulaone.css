@@ -113,6 +113,14 @@ p {
   text-align: right;
 }
 
+.dt_netherlands {
+  width: 300px;
+  background-color: #ff9a00;
+  padding-right: 125px;
+  padding-left: 100px;
+  text-align: right;
+}
+
 ol {
   width:600px;
   list-style-position: inside;
