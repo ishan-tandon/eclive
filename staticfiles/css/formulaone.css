@@ -121,6 +121,28 @@ p {
   text-align: right;
 }
 
+.dt_japan {
+  width: 300px;
+  background-color: #fcfefb;
+  padding-right: 125px;
+  padding-left: 100px;
+  text-align: right;
+}
+
+.dt_mexico {
+  width: 300px;
+  background: linear-gradient(
+    to right,
+    green 0%,
+    green 50%,
+    red 50%,
+    red 100%
+    );
+  padding-right: 125px;
+  padding-left: 100px;
+  text-align: right;
+}
+
 ol {
   width:600px;
   list-style-position: inside;
