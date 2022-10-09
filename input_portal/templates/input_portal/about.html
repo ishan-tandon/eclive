@@ -4,7 +4,7 @@
 {% block body_block %}
     <h1>2022 Estimation Championship</h1>
   <br>
-    <div style="text-align: center">
+    <!--<div style="text-align: center">
     <img src="{% static 'images/' %}trackpng_JAP.png" alt="My image" style="width: 300px">
     </div>
 
@@ -26,10 +26,10 @@
         </div>
       </a>
     <p>Please send your estimate before 10:30 IST/08:00 MSK/07:00 CEST/01:00 EDT on Sunday, 9th October/22:00 PDT on Saturday, 8th October<br>Points multiplier for this weekend- Tsunoda (2x)<br>Lightning Round- See race rules for more</p>
-  </div>
+  </div>-->
 
     {% if races %}
-      <h2> Past Race Results </h2>
+      <h2> Race Results </h2>
       <center>
       {% for r in races %}
         <a href = "../results/{{ r.racecode}}">
